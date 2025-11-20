@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ZoomIn, Image as ImageIcon } from 'lucide-react';
+import { X, ZoomIn, Image as ImageIcon, Play } from 'lucide-react';
 import { GalleryItem } from '../../types';
 
 export const SmartGallery: React.FC = () => {
@@ -10,8 +10,8 @@ export const SmartGallery: React.FC = () => {
     try {
       // Cast import.meta to any to avoid TS error
       const meta = import.meta as any;
-      // Updated to look in the current directory instead of src/assets
-      const globImport = meta.glob('./*.(png|jpe?g|svg|webp|gif|mp4)', {
+      // Updated to look in the current directory and include video formats
+      const globImport = meta.glob('./*.(png|jpe?g|svg|webp|gif|mp4|webm)', {
         eager: true,
         as: 'url',
       });
@@ -30,6 +30,10 @@ export const SmartGallery: React.FC = () => {
       return [];
     }
   }, []);
+
+  const isVideo = (src: string) => {
+    return /\.(mp4|webm)$/i.test(src);
+  };
 
   return (
     <div className="pb-24">
@@ -55,13 +59,30 @@ export const SmartGallery: React.FC = () => {
               className="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white/5 border border-white/10 cursor-pointer"
               onClick={() => setSelectedImage(img)}
             >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-auto transform transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+              {isVideo(img.src) ? (
+                <div className="relative">
+                  <video
+                    src={img.src}
+                    className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                  />
+                  <div className="absolute top-2 right-2 bg-black/50 p-1.5 rounded-full backdrop-blur-md">
+                    <Play size={12} className="text-white fill-white" />
+                  </div>
+                </div>
+              ) : (
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-auto transform transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                  loading="lazy"
+                />
+              )}
+              
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm pointer-events-none">
                 <ZoomIn className="text-white" size={32} />
               </div>
             </motion.div>
@@ -69,7 +90,7 @@ export const SmartGallery: React.FC = () => {
         </div>
       ) : (
         <div className="text-center py-20 text-white/40">
-          <p>No images found in gallery folder.</p>
+          <p>No media found in gallery folder.</p>
         </div>
       )}
 
@@ -87,14 +108,26 @@ export const SmartGallery: React.FC = () => {
               <X size={32} />
             </button>
             
-            <motion.img
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl border border-white/10 object-contain"
-              onClick={(e) => e.stopPropagation()} 
-            />
+            {isVideo(selectedImage.src) ? (
+               <motion.video
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                src={selectedImage.src}
+                className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl border border-white/10 outline-none"
+                controls
+                autoPlay
+                onClick={(e) => e.stopPropagation()} 
+              />
+            ) : (
+              <motion.img
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl border border-white/10 object-contain"
+                onClick={(e) => e.stopPropagation()} 
+              />
+            )}
             
             <div className="absolute bottom-8 left-0 right-0 text-center pointer-events-none">
                <h3 className="text-xl text-white font-bold capitalize drop-shadow-lg">{selectedImage.alt}</h3>

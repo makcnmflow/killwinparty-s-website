@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, ShieldAlert, Code, Terminal, Globe2, Cpu, User } from 'lucide-react';
+import { Brain, ShieldAlert, Code, Terminal, Globe2, User } from 'lucide-react';
+
+// @ts-ignore
+import bioVideo from './video.mp4';
+// @ts-ignore
+import avatarIcon from './icon.png';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -37,24 +42,39 @@ export const Bio: React.FC = () => {
         variants={itemVariants}
         className="md:row-span-2 md:col-span-1 relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-lg group"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90 z-10 pointer-events-none" />
         
-        {/* Background Video - Place your video file at /src/assets/bio-video.mp4 */}
+        {/* Background Video from current directory */}
         <video 
           autoPlay 
           loop 
           muted 
           playsInline 
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-          src="/src/assets/bio-video.mp4"
+          src={bioVideo}
         />
 
-        <div className="absolute bottom-0 left-0 p-6 z-20">
-          <div className="w-16 h-16 rounded-full border-2 border-purple-500 p-1 mb-4 animate-[spin_10s_linear_infinite]">
-            <div className="w-full h-full rounded-full border border-dashed border-white/50" />
+        <div className="absolute bottom-0 left-0 p-6 z-20 w-full">
+          <div className="flex items-center gap-4 mb-4">
+             {/* Avatar Circle with Spinning Border */}
+             <div className="relative w-20 h-20 flex items-center justify-center">
+                {/* Spinning ring */}
+                <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-purple-500 border-r-purple-500 animate-[spin_3s_linear_infinite]" />
+                <div className="absolute inset-1 rounded-full border border-white/20" />
+                
+                {/* Avatar Image */}
+                <div className="w-full h-full rounded-full overflow-hidden p-1.5">
+                  <img 
+                    src={avatarIcon} 
+                    alt="killwinparty" 
+                    className="w-full h-full rounded-full object-cover bg-black/50"
+                  />
+                </div>
+             </div>
           </div>
-          <h2 className="text-3xl font-bold text-white">killwinparty</h2>
-          <p className="text-white/60 text-sm">Senior Creative Engineer</p>
+          
+          <h2 className="text-3xl font-bold text-white mb-1">killwinparty</h2>
+          <p className="text-purple-300 font-mono text-sm tracking-wider">Senior Creative Engineer</p>
         </div>
       </motion.div>
 

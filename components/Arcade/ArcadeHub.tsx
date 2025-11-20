@@ -31,8 +31,8 @@ export const ArcadeHub: React.FC = () => {
 
   return (
     <div className="h-full flex flex-col items-center justify-center pb-20">
-      <h2 className="text-4xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400">
-        SELECT CARTRIDGE
+      <h2 className="text-4xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400 uppercase">
+        SELECT A GAME
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
@@ -42,7 +42,7 @@ export const ArcadeHub: React.FC = () => {
           icon={Bomb} 
           color="text-red-400" 
           onClick={() => setActiveGame('MINES')} 
-          desc="Logic puzzle. Avoid the corrupt sectors."
+          desc="Classic Minesweeper game."
         />
 
         {/* Tic Tac Toe Card */}
@@ -51,7 +51,7 @@ export const ArcadeHub: React.FC = () => {
           icon={Grid3X3} 
           color="text-blue-400" 
           onClick={() => setActiveGame('TICTACTOE')} 
-          desc="Player vs CPU. Can you beat the algorithm?"
+          desc="Play against the computer."
         />
 
         {/* Memory Card */}
@@ -60,7 +60,7 @@ export const ArcadeHub: React.FC = () => {
           icon={BrainCircuit} 
           color="text-green-400" 
           onClick={() => setActiveGame('MEMORY')} 
-          desc="Test your short-term storage capacity."
+          desc="Flip cards to find pairs."
         />
       </div>
     </div>

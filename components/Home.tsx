@@ -16,7 +16,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         transition={{ duration: 0.8, type: "spring" }}
         className="relative"
       >
-        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur opacity-30 animate-pulse" />
+        {/* Removed gradient oval here */}
         <div className="relative p-8 bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl shadow-2xl max-w-2xl">
           <div className="flex justify-center mb-6">
             <div className="p-4 bg-purple-500/20 rounded-2xl border border-purple-500/30">

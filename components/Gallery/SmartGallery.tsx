@@ -11,7 +11,7 @@ export const SmartGallery: React.FC = () => {
       // Cast import.meta to any to avoid TS error
       const meta = import.meta as any;
       // Updated to look in the current directory instead of src/assets
-      const globImport = meta.glob('./*.(png|jpe?g|svg|webp|gif)', {
+      const globImport = meta.glob('./*.(png|jpe?g|svg|webp|gif|mp4)', {
         eager: true,
         as: 'url',
       });

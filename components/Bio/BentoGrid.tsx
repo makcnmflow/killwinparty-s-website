@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Brain, ShieldAlert, Code, Terminal, Globe2, User } from 'lucide-react';
 
 // @ts-ignore
-import bioVideo from './video.mp4';
+import bioVideo from './vido.mp4';
 // @ts-ignore
 import avatarIcon from './icon.png';
 

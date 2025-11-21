@@ -38,7 +38,7 @@ export const ArcadeHub: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
         {/* Minesweeper Card */}
         <GameCard 
-          title="Cyber Sweeper" 
+          title="Minesweeper" 
           icon={Bomb} 
           color="text-red-400" 
           onClick={() => setActiveGame('MINES')} 
@@ -47,7 +47,7 @@ export const ArcadeHub: React.FC = () => {
 
         {/* Tic Tac Toe Card */}
         <GameCard 
-          title="Tic Tac AI" 
+          title="Tic Tac Toe (with stupid ai)" 
           icon={Grid3X3} 
           color="text-blue-400" 
           onClick={() => setActiveGame('TICTACTOE')} 
@@ -56,7 +56,7 @@ export const ArcadeHub: React.FC = () => {
 
         {/* Memory Card */}
         <GameCard 
-          title="Memory RAM" 
+          title="Memory Game" 
           icon={BrainCircuit} 
           color="text-green-400" 
           onClick={() => setActiveGame('MEMORY')} 

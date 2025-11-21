@@ -74,7 +74,7 @@ export const Bio: React.FC = () => {
           </div>
           
           <h2 className="text-3xl font-bold text-white mb-1">killwinparty</h2>
-          <p className="text-purple-300 font-mono text-sm tracking-wider">Senior Creative Engineer</p>
+          <p className="text-purple-300 font-mono text-sm tracking-wider">Just a silly one</p>
         </div>
       </motion.div>
 
@@ -86,13 +86,13 @@ export const Bio: React.FC = () => {
         <div className="absolute top-0 right-0 p-32 bg-purple-600/20 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
         <div className="flex items-center gap-3 mb-4 text-purple-300">
             <User size={20} />
-            <span className="uppercase tracking-widest text-xs font-bold">The Human Element</span>
+            <span className="uppercase tracking-widest text-xs font-bold">my bio :D</span>
         </div>
         <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
-          "Curious Explorer & <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Lifelong Learner.</span>"
+          "Stupid vibe coder & <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">That one funni guy.</span>"
         </h3>
         <p className="text-lg text-white/70">
-          I don't just code; I explore. I have a deep passion for learning new things every day, dissecting complex systems, and reconstructing them with better UI.
+          I love playing games, when I have free time I doing smth with ai and also I love learn something new about cybersecurity.
         </p>
       </motion.div>
 
@@ -104,9 +104,9 @@ export const Bio: React.FC = () => {
         <div className="w-12 h-12 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-4 text-purple-400 group-hover:text-white group-hover:scale-110 transition-all">
           <Brain size={24} />
         </div>
-        <h4 className="text-xl font-semibold mb-2">AI & Neural Nets</h4>
+        <h4 className="text-xl font-semibold mb-2">AI ai ai Ai AI ia ai aia aiaiai</h4>
         <p className="text-sm text-white/60 leading-relaxed">
-          Fascinated by model architecture and advanced Prompt Engineering.
+          I LOVE AI I LOVE AI I LOVE AI.
         </p>
       </motion.div>
 
@@ -123,7 +123,7 @@ export const Bio: React.FC = () => {
         </div>
         <h4 className="text-xl font-semibold mb-2 relative z-10 group-hover:text-green-400 transition-colors">Cybersecurity</h4>
         <p className="text-sm text-white/60 leading-relaxed relative z-10">
-          Diving into InfoSec. Interested in how systems break and how to protect them.
+          diving into cybersecurity I interested in how systems break and how to protect them.
         </p>
       </motion.div>
 
@@ -138,7 +138,7 @@ export const Bio: React.FC = () => {
              <div className="flex items-center gap-2 text-yellow-400">
                <Code size={18} /> <span className="font-bold">Python</span>
              </div>
-             <span className="text-xs font-mono bg-white/10 px-2 py-1 rounded">17% LOADED</span>
+             <span className="text-xs font-mono bg-white/10 px-2 py-1 rounded">17% learned</span>
           </div>
           <div className="h-2 bg-white/10 rounded-full overflow-hidden mb-2">
              <motion.div 
@@ -148,7 +148,7 @@ export const Bio: React.FC = () => {
                className="h-full bg-yellow-400/80 shadow-[0_0_10px_rgba(250,204,21,0.5)]" 
              />
           </div>
-          <p className="text-xs text-white/40">Basic Syntax. Loops. Still initializing core modules...</p>
+          <p className="text-xs text-white/40">Basic Syntax. Loops. Still learning basics</p>
         </div>
 
         {/* Languages divider */}
@@ -160,7 +160,7 @@ export const Bio: React.FC = () => {
              <div className="flex items-center gap-2 text-blue-400">
                <Globe2 size={18} /> <span className="font-bold">Russian</span>
              </div>
-             <span className="text-xs font-mono text-green-400">100% MASTERED</span>
+             <span className="text-xs font-mono text-green-400">100%</span>
           </div>
           <div className="h-2 bg-white/10 rounded-full overflow-hidden mb-2">
              <motion.div 
@@ -170,7 +170,7 @@ export const Bio: React.FC = () => {
                className="h-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" 
              />
           </div>
-          <p className="text-xs text-white/40">Native Speaker. Full vocabulary access.</p>
+          <p className="text-xs text-white/40">Native Speaker.</p>
         </div>
 
         {/* English */}
@@ -179,7 +179,7 @@ export const Bio: React.FC = () => {
              <div className="flex items-center gap-2 text-red-400">
                <Terminal size={18} /> <span className="font-bold">English</span>
              </div>
-             <span className="text-xs font-mono text-yellow-200">45% UPGRADING</span>
+             <span className="text-xs font-mono text-yellow-200">45% still learning</span>
           </div>
           <div className="h-2 bg-white/10 rounded-full overflow-hidden mb-2">
              <motion.div 
@@ -189,7 +189,7 @@ export const Bio: React.FC = () => {
                className="h-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]" 
              />
           </div>
-          <p className="text-xs text-white/40">Conversational. Reading docs & upgrading vocab DB.</p>
+          <p className="text-xs text-white/40">Conversational. Dont know many words but I still learning :D</p>
         </div>
       </motion.div>
     </motion.div>
